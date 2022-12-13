@@ -1,19 +1,12 @@
 const locators = require("../../fixtures/locators.json")
 const { faker } = require("@faker-js/faker")
 
-
-
 describe ("Register tests", () => {
 
     beforeEach(() => {
         cy.visit('/')
         cy.get(locators.header.registerBtn).click()
     })
-
-    /*it('Visit gallery', () => {
-        cy.visit('/')
-        cy.get('.nav-link').eq(2).click()
-    })*/
 
     it.only('Register with valid credentials', () => {
         const passwordFaker = faker.internet.password();
