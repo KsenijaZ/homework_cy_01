@@ -1,6 +1,8 @@
 const locators = require("../../fixtures/locators.json")
 const { faker } = require("@faker-js/faker")
 
+
+
 describe ("Register tests", () => {
 
     beforeEach(() => {
@@ -14,11 +16,12 @@ describe ("Register tests", () => {
     })*/
 
     it.only('Register with valid credentials', () => {
+        const passwordFaker = faker.internet.password();
         cy.get(locators.register.firstName).type(faker.name.firstName())
         cy.get(locators.register.lastName).type(faker.name.lastName())
         cy.get(locators.register.emailInput).type(faker.internet.email())
-        cy.get(locators.register.passwordInput).type('cyTest12345')
-        cy.get(locators.register.passwordConfirmation).type('cyTest12345')
+        cy.get(locators.register.passwordInput).type(passwordFaker)
+        cy.get(locators.register.passwordConfirmation).type(passwordFaker)
         cy.get(locators.register.terms).click()
         cy.get(locators.register.submitBtn).click()
     })
