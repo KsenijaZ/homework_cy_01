@@ -6,10 +6,7 @@ describe ("Login tests", () => {
         cy.visit('/')
         cy.get(locators.header.loginBtn).click()
     })
-    /*it('Visit gallery', () => {
-        cy.visit('/')
-        cy.get('.nav-link').eq(1).click()
-    })*/
+
     it('Login with valid credentials', () => {
 
         cy.get(locators.login.emailInput).type('testapi@gmail.com')
