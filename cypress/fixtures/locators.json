@@ -1,0 +1,24 @@
+{
+    "login": {
+        "emailInput": "#email",
+        "passwordInput": "#password",
+        "submitBtn": "button"
+    },
+
+    "header": {
+        "loginBtn": "a[href='/login']",
+        "logoutBtn": ".ml-auto > :nth-child(3) > .nav-link",
+        "registerBtn": ":nth-child(2) > .nav-link"
+    },
+
+    "register": {
+        "firstName": "#first-name",
+        "lastName": "#last-name",
+        "emailInput": "#email",
+        "passwordInput": "#password",
+        "passwordConfirmation": "#password-confirmation",
+        "terms": ".form-check-input",
+        "submitBtn": "button"
+
+    }
+}
