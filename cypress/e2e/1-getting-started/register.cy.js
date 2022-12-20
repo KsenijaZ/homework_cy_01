@@ -8,7 +8,7 @@ describe ("Register tests", () => {
         cy.get(locators.header.registerBtn).click()
     })
 
-    it.only('Register with valid credentials', () => {
+    it('Register with valid credentials', () => {
         const passwordFaker = faker.internet.password();
         cy.get(locators.register.firstName).type(faker.name.firstName())
         cy.get(locators.register.lastName).type(faker.name.lastName())
@@ -18,6 +18,7 @@ describe ("Register tests", () => {
         cy.get(locators.register.terms).click()
         cy.get(locators.register.submitBtn).click()
     })
+
     it('Register with invalid email', () => {
         cy.get(locators.register.firstName).type('cyName')
         cy.get(locators.register.lastName).type('cylastName')
@@ -27,6 +28,7 @@ describe ("Register tests", () => {
         cy.get(locators.register.terms).click()
         cy.get(locators.register.submitBtn).click()
     })
+
     it('Register with invalid password, less then 8 char', () => {
         cy.get(locators.register.firstName).type('cyName')
         cy.get(locators.register.lastName).type('cylastName')
@@ -36,8 +38,10 @@ describe ("Register tests", () => {
         cy.get(locators.register.terms).click()
         cy.get(locators.register.submitBtn).click()
     })
-    it('Register without first name', () => {
-        cy.get(locators.register.firstName).should('have.value', '');
+
+    it.only('Register without first name', () => {
+        cy.get(locators.register.firstName).type('cyName')
+        cy.get(locators.register.firstName).clear()
         cy.get(locators.register.lastName).type('cylastName')
         cy.get(locators.register.emailInput).type('testcy@gmail.com')
         cy.get(locators.register.passwordInput).type('cyTest12345')
@@ -45,6 +49,7 @@ describe ("Register tests", () => {
         cy.get(locators.register.terms).click()
         cy.get(locators.register.submitBtn).click()
     })
+
     it('Register without last name', () => {
         cy.get(locators.register.firstName).type('cyName')
         cy.get(locators.register.lastName).should('have.value', '');
@@ -54,6 +59,7 @@ describe ("Register tests", () => {
         cy.get(locators.register.terms).click()
         cy.get(locators.register.submitBtn).click()
     })
+    
     it('Register without accepted terms', () => {
         cy.get(locators.register.firstName).type('cyName')
         cy.get(locators.register.lastName).type('cylastName')
