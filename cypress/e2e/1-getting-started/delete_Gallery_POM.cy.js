@@ -16,6 +16,7 @@ describe ("Login tests", () => {
     })
 
     it("Create gallery test", () => {
+        cy.visit('/')
         homePage.createGalleryBtn.click()
         cy.intercept('POST', 'https://gallery-api.vivifyideas.com/api/galleries', (req) => {
         }).as('newGallery')
