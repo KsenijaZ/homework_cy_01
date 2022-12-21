@@ -48,5 +48,6 @@
             }
         }).its('body').then((response) => {
             window.localStorage.setItem('token', response.access_token);
+            window.localStorage.setItem('user_id', response.user_id);
         })
     })
