@@ -21,5 +21,4 @@ describe("Home Page test", () => {
         cy.clearCookies()
     })
 
-
 })

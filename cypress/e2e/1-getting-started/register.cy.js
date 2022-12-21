@@ -70,4 +70,8 @@ describe ("Register tests", () => {
         cy.get(locators.register.submitBtn).click()
     })
 
+    afterEach(() => {
+        cy.clearCookies()
+    })
+
 })

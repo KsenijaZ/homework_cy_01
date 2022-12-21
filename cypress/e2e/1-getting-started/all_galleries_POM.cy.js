@@ -14,4 +14,8 @@ describe("Home Page test", () => {
         homePage.postItem.should('have.length', 10)
     })
 
+    afterEach(() => {
+        cy.clearCookies()
+    })
+
 })

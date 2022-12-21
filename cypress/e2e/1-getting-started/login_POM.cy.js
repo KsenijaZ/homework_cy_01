@@ -49,11 +49,6 @@ describe ("Login tests", () => {
     })
 
     it("Logout", () => {
-        // loginPage.login("testapi@gmail.com", "api12345")
-        // homePage.logoutBtn.click()
-        // homePage.loginBtn.should('be.visible')
-        // homePage.logoutBtn.should('not.exist')
-
         cy.intercept('POST', 'https://gallery-api.vivifyideas.com/api/auth/logout', (req) => {
         }).as('validLogout')
         loginPage.login("testapi@gmail.com", "api12345")
@@ -64,8 +59,6 @@ describe ("Login tests", () => {
         
         })
     })
-
-   
 
     afterEach(() => {
         cy.clearCookies()

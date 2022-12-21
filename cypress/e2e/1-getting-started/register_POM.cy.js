@@ -46,44 +46,8 @@ describe ("Register tests", () => {
         .and('have.css', 'color', 'rgb(114, 28, 36)')
     })
 
-
-})
-
-/*
-/// <reference types="Cypress" />
-
-import { loginPage } from "../pageObjects/loginPage.js";
-import { homePage } from "../pageObjects/homePage.js";
-
-describe("Login tests", () => {
-    beforeEach( () => {
-        cy.visit('/')
-        cy.url().should('include','gallery-app')
-        homePage.clickLoginButton()
-        cy.url().should('include','/login')
-        loginPage.loginTitle.should('have.text','Please login')
-    })
-
-    it ('Login with valid credentials', () => {
-        loginPage.login('bilja.QA1@gmail.com', 'Bilja12341234')  
-    })
-
-    it ('Login with invalid credentials', () => {
-        loginPage.login('bilja.QA1@com.com', '12341234')
-        loginPage.errorAlert.should('be.visible')
-        loginPage.errorAlert.should('have.text','Bad Credentials') 
-        loginPage.errorAlert.should('have.css','background-color','rgb(248, 215, 218)')
-    })
-
-    it ('Logout', () => {
-        loginPage.login('bilja.QA1@gmail.com', 'Bilja12341234') 
-        homePage.loginBtn.should('not.exist')
-        homePage.clickLogoutButton()
-        cy.wait(5000)
-        homePage.logoutBtn.should('not.exist')
-    })
-
     afterEach(() => {
         cy.clearCookies()
     })
-})*/
+
+})

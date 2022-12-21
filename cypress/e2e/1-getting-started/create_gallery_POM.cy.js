@@ -5,19 +5,10 @@ import { homePage } from "../../pageObjects/homePage";
 describe("Create gallery test", () => {
 
     beforeEach(() => {
-  
-        // cy.request('POST', 'https://gallery-api.vivifyideas.com/api/auth/login', {
-        //     email: 'testapi@gmail.com',
-        //     password: 'api12345'
-        // }).its('body').then((response) => {
-        //     window.localStorage.setItem('token', response.access_token)
-        // })
-
         cy.loginThroughBackend('testapi@gmail.com', 'api12345')
-
     })
 
-    it.only("Create gallery test", () => {
+    it("Create gallery test", () => {
         cy.visit('/')
         homePage.createGalleryBtn.click()
 
@@ -83,6 +74,10 @@ describe("Create gallery test", () => {
             .and('have.css','background-color','rgb(248, 215, 218)')
             .and('have.text', 'Wrong format of image')
             .and('have.css', 'color', 'rgb(114, 28, 36)')
+    })
+
+    afterEach(() => {
+        cy.clearCookies()
     })
 
 })
